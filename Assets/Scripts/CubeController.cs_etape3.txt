@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CubeController : MonoBehaviour
+{
+
+    public float speed = 5f;
+    public float jumpSpeed = 16f;
+    public float jumpCoolDown = 0f;
+
+    // Update is called once per frame
+    void Update()
+    { 
+
+    }
+
+    // ETAPE 3
+    // a : mort d'un objet
+    // private void OnMouseDown()
+    // {
+    //     Destroy(gameObject);
+    // }
+
+    // b : mort d'un objet
+    private void OnMouseDown()
+    {
+        GameObject clone = Instantiate(gameObject);
+    }    
+
+}

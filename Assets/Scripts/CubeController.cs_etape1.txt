@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CubeController : MonoBehaviour
+{ 
+    // Update is called once per frame
+    void Update()
+    {
+
+        // on va chercher le composant rigidbody associé à cet objet
+        Rigidbody body = GetComponent<Rigidbody>();
+
+        // ETAPE1 : ecriture 1
+        // body.velocity = new Vector3(2f, 0f, 1f); //par seconde
+ 
+        // ETAPE1 : ecriture 2
+        Vector3 move = new Vector3(2f, 0f, 1f);
+        body.velocity = move;
+    }
+}

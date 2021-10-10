@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CubeController : MonoBehaviour
+{ 
+    // Update is called once per frame
+    void Update()
+    {
+        // ETAPE 0 : un cube qui rebondit
+        transform.position = transform.position + Vector3.up * 0.1f; 
+    }
+}
