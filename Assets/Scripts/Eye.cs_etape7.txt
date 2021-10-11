@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Eye : MonoBehaviour
+{
+    public Transform target; //public Transform target = null;
+    public GameObject clone;   
+ 
+    // Update is called once per frame
+    void Update()
+    {
+        if (target != null)
+        {
+            transform.LookAt(target);
+        }
+    }
+
+    void OnMouseDown()
+    {
+        clone = Instantiate(gameObject, transform.parent); // dans le parent de l'appelant
+        clone.SetActive(false);
+        
+        target = null;  // se sépare de la target
+        Rigidbody body = gameObject.AddComponent<Rigidbody>();
+        body.angularDrag = 0.9f;
+
+        StartCoroutine(FallEnd());
+    }
+    
+    IEnumerator FallEnd()
+    {
+        yield return new WaitForSeconds(4f); // c'est ici qu'on attends
+        clone.SetActive(true);
+    }
+
+}

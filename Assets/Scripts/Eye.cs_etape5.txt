@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Eye : MonoBehaviour
+{
+    public Transform target; //public Transform target = null;
+    //public bool isFalling = false; // public pour le voir dans l'inspecteur
+    //public GameObject clone;    
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target != null)
+        {
+            transform.LookAt(target);
+        }
+    }
+
+    void OnMouseDown()
+    {
+        target = null;  // se sépare de la target
+        // on ajoute un composant Rigidbody pour avoir de la gravité
+        Rigidbody body = gameObject.AddComponent<Rigidbody>();
+        // trainée angulaire = friction associée à la friction
+        // valeur à 0.2 (défaut 0.05) pour ralentir roulement
+        body.angularDrag = 0.9f;
+    }
+
+}

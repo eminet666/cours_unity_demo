@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648249506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 3, z: 0.00037}
+  m_LocalPosition: {x: 4, y: 3, z: 0.00037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -602,7 +602,7 @@ PrefabInstance:
     - target: {fileID: 8569425164699422647, guid: 2168bfac971cd6d498be2dcd9e9f707f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dee7397a6129b4345aafa95a1c9bcbda, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c4058c8b50b59f46b3670ddf33acd1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2168bfac971cd6d498be2dcd9e9f707f, type: 3}
 --- !u!1 &2084492925
@@ -618,6 +618,8 @@ GameObject:
   - component: {fileID: 2084492928}
   - component: {fileID: 2084492927}
   - component: {fileID: 2084492926}
+  - component: {fileID: 2084492932}
+  - component: {fileID: 2084492931}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -712,9 +714,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084492925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084492931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084492925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d3b4fcc855cc042abefdc4d1f2faff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfClones: 3
+--- !u!114 &2084492932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084492925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2deb3b1dc395e8348b626792d85b9c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpSpeed: 16
+  jumpCoolDown: 0
