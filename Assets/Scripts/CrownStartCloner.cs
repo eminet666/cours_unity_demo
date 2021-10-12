@@ -16,18 +16,16 @@ public class CrownStartCloner : MonoBehaviour
         // clone.transform.Rotate(0f, yAngle, 0f);
 
         // pour n fois
-        for (int i = 0; i < numOfClones; i++)
-        {
+        for(int i = 0 ; i < numOfClones; i++)      {
             MakeAClone();
         }
 
     }
 
-    void MakeAClone()
-    {
-        GameObject clone = Instantiate(gameObject, transform.parent);
+    void MakeAClone() {
+        GameObject clone =  Instantiate(gameObject, transform.parent);
         // nécessaire de détruire script sur le clone pour ne pas avoir de mise en abime 
-        Destroy(clone.GetComponent<CrownStartCloner>());
+        Destroy(clone.GetComponent<CrownStartCloner>()); 
         float yAngle = Random.Range(0f, 360f);
         clone.transform.Rotate(0f, yAngle, 0f);
 
@@ -38,5 +36,7 @@ public class CrownStartCloner : MonoBehaviour
         // pour change la taille
         clone.transform.GetChild(0).localScale = Vector3.one * Random.Range(0.2f, 1f);
     }
-}
 
+
+
+}
