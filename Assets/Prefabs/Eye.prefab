@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  clone: {fileID: 0}
+  isFalling: 0
 --- !u!135 &8069722237903365213
 SphereCollider:
   m_ObjectHideFlags: 0

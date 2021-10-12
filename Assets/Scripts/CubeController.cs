@@ -6,29 +6,55 @@ public class CubeController : MonoBehaviour
 {
 
     public float speed = 5f;
-    public float jumpSpeed = 16f;
+    public float jumpspeed = 16f;
     public float jumpCoolDown = 0f;
+    public float angularSpeed = 5f;
+    public Rigidbody body; // ajouté quand passe dans le start
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-        // on va chercher le composant rigidbody associé à cet objet
-        Rigidbody body = GetComponent<Rigidbody>();
+        //transform.position = transform.position+ Vector3.up*10f; 
+        body = GetComponent<Rigidbody>();
 
-        // ETAPE2 : contrôle au clavier
+        // un test d'existence du rigid body pour montrer usage du start
+        if (body == null)
+        {
+            Debug.LogError("Il n'y a pas de rigid");
+            Debug.Break();
+        }
+    }
+
+    void updateMove()
+    {
         Vector3 move = new Vector3();
         move.x = speed * Input.GetAxis("Horizontal"); // clavier
         move.z = speed * Input.GetAxis("Vertical");   // clavier
-        move.y = body.velocity.y;                     // gravité normale
+        move.y = body.velocity.y; // gravité normale
 
-        // saut : solution élaborée
+        body.velocity = move;
+    }
+
+    void updateJump()
+    {
         jumpCoolDown = jumpCoolDown - Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && jumpCoolDown <= 0)
         {
             jumpCoolDown = 1.5f;
-            move.y = jumpSpeed;
+            Vector3 move = body.velocity;
+            move.y = jumpspeed;
+            body.velocity = move;
+
+            // vitesse de rotation aléatoire sur le cube
+            body.angularVelocity = Random.onUnitSphere * angularSpeed;
         }
-        body.velocity = move;
-    }   
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        updateMove();
+        updateJump();
+    }
 
 }

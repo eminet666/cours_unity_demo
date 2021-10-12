@@ -11,7 +11,7 @@ public class CubeController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         // on va chercher le composant rigidbody associé à cet objet
         Rigidbody body = GetComponent<Rigidbody>();
 
@@ -21,12 +21,6 @@ public class CubeController : MonoBehaviour
         move.z = speed * Input.GetAxis("Vertical");   // clavier
         move.y = body.velocity.y;                     // gravité normale
 
-        // saut : solution simple
-        // if (Input.GetKeyDown(KeyCode.Space))    
-        // {
-        //     move.y = jumpSpeed;
-        // }
-
         // saut : solution élaborée
         jumpCoolDown = jumpCoolDown - Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && jumpCoolDown <= 0)
@@ -34,8 +28,7 @@ public class CubeController : MonoBehaviour
             jumpCoolDown = 1.5f;
             move.y = jumpSpeed;
         }
-
         body.velocity = move;
+    }   
 
-    }
 }
