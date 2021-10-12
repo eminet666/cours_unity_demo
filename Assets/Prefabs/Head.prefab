@@ -263,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7208600318502263517}
   - component: {fileID: 6260095454725707376}
+  - component: {fileID: 140332409993064392}
   m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
@@ -299,6 +300,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfClones: 10
+--- !u!114 &140332409993064392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235631119177766537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd33c8cce3b2cc04e8abe5d1683b57d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: {x: 0, y: 90, z: 0}
 --- !u!1001 &1264191050634074412
 PrefabInstance:
   m_ObjectHideFlags: 0
